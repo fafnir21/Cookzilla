@@ -1,0 +1,31 @@
+<div class="post-content">
+  <div class="ui grid">
+
+
+    <div class="eight wide column">
+      <div class="ui segment">
+        <h3><a href="/recipe/<%= recipe.rid %>"><%= recipe.rtitle %></a></h3>
+        <pre><%- recipe.rdescription %></pre>
+        <div>
+          <span class="tag"><%= recipe.posttime %></span>
+          <span class="tag right">
+            <span>浏览()</span>
+            <span>留言()</span>
+
+            <% if (recipe.uname) { %>
+              <div class="ui inline dropdown">
+                <div class="text"></div>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                  <div class="item"><a href="/recipe/<%= recipe.rid %>/edit">编辑</a></div>
+                  <div class="item"><a href="/recipe/<%= recipe.rid %>/delete">删除</a></div>
+                </div>
+              </div>
+            <% } %>
+
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

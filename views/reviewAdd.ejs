@@ -1,0 +1,35 @@
+<%- include('header') %>
+
+<div class="ui grid">
+
+  <div class="eight wide column">
+    <form class="ui form segment" method="post">
+      <div class="field required">
+        <label>Title</label>
+        <input type="text" name="revtitle">
+      </div>
+      <div class="field">
+        <label>Text</label>
+        <textarea name="revtext" rows="15"></textarea>
+      </div>
+      <div class="field">
+        <label>Suggestion</label>
+        <textarea name="suggestion" rows="15"></textarea>
+      </div>
+      <div class="field">
+        <label>Rating</label>
+        <div class="rating">
+            <input type="radio" id="star1" name="rating" value="1" />
+            <input type="radio" id="star2" name="rating" value="2" />
+            <input type="radio" id="star3" name="rating" value="3" />
+            <input type="radio" id="star4" name="rating" value="4" />
+            <input type="radio" id="star5" name="rating" value="5" />
+        </div>
+      </div>
+      <input type="submit" class="ui button" value="submit">
+    </div>
+  </form>
+</div>
+
+<%- include('footer') %>
+

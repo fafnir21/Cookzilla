@@ -1,0 +1,36 @@
+<%- include('header') %>
+
+<div class="post-content">
+  <div class="ui grid">
+
+
+    <div class="eight wide column">
+      <div class="ui segment">
+        <h3><a href="/meeting/<%= info[0].mid %>"><%= info[0].mtitle %></a></h3>
+        <pre>Description:</pre>
+        <pre><%- info[0].mdescription %></pre>
+        <p>address:&nbsp;&nbsp;<%- info[0].holdaddr %></p>
+        <p>time:&nbsp;&nbsp;<%- info[0].holdtime %></p>
+        <p>held by:&nbsp;&nbsp;<%- info[0].gname %></p>
+        <hr>
+        <p>Report:</p>
+        <% for(var i=0;i<report.length;i++){ %>
+        <p>Author:&nbsp;&nbsp;<%- report[i].uname %>&nbsp;&nbsp;Time:&nbsp;&nbsp;<%- report[i].reporttime %></p>
+        <p>Title:&nbsp;&nbsp;<%- report[i].reptitle %></p>
+
+        <p>Description:</p>
+        <%- report[i].reptitle %>
+        <hr>
+        <% } %>
+
+        <% if(rsvp.length==0){ %>
+        <input value="Attend" type=button onclick="window.location.href='/meeting/<%- info[0].mid %>/attend'">
+        <% } else { %>
+        <input value="Report" type=button onclick="window.location.href='/meeting/<%- info[0].mid %>/report'">
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('footer') %>
+

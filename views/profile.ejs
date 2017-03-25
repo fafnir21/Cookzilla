@@ -1,0 +1,24 @@
+<%- include('header') %>
+
+<div class="post-content">
+  <div class="ui grid">
+
+
+    <div class="eight wide column">
+      <div class="ui segment">
+
+        <pre>Username:</pre>
+        <pre><%- profile[0].uname %></pre>
+        <p>Address:</p>
+        <p><%- profile[0].address %></p>
+        <p>Birthday:</p>
+        <p><%- profile[0].birth_day %></p>
+        <p>Phone:</p>
+        <p><%- profile[0].phone %></p>
+      </div>
+      <input value="Edit" type=button onclick="window.location.href='/profile/edit'">
+    </div>
+  </div>
+</div>
+<%- include('footer') %>
+

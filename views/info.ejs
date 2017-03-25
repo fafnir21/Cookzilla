@@ -1,0 +1,62 @@
+<%- include('header') %>
+
+<div class="post-content">
+  <div class="ui grid">
+
+
+    <div class="eight wide column">
+      <div class="ui segment">
+        <h3><a href="/recipe/<%= recipe[0].rid %>"><%= recipe[0].rtitle %></a></h3>
+        <pre>Description:</pre>
+        <pre><%- recipe[0].rdescription %></pre>
+        <p>Number of Servings: <%- recipe[0].servings %></p>
+        <hr>
+        <p>Tag:</p>
+        <% for(var i=0;i<tag.length;i++){ %>
+        <p><%- tag[i].tname %>&nbsp;&nbsp;
+        <input value="delete tag" type=button onclick="window.location.href='/tag/delete?rid=<%- recipe[0].rid %>&tid=<%- tag[i].tid %>'">
+        </p>
+        <% } %>
+        <% if(recipe[0].author==user){ %>
+        <input value="Add Tag" type=button onclick="window.location.href='/tag?rid=<%- recipe[0].rid %>'">
+        <% } %>
+        <hr>
+        <p>Ingredient:</p>
+        <% for(var i=0;i<ingredient.length;i++){ %>
+        <p><%- ingredient[i].iname %>:&nbsp;&nbsp;<%- ingredient[i].quantity %>g&nbsp;&nbsp;
+        <input value="delete ingredient" type=button onclick="window.location.href='/ingredient/delete?rid=<%- recipe[0].rid %>&iid=<%- ingredient[i].iid %>'">
+        </p>
+        <% } %>
+        <% if(recipe[0].author==user){ %>
+        <input value="Add Ingredient" type=button onclick="window.location.href='/ingredient?rid=<%- recipe[0].rid %>'">
+        <% } %>
+        <hr>
+        <p>Review:</p>
+        <% for(var i=0;i<review.length;i++){ %>
+        <p><%- review[i].revtitle %></p>
+        <p><%- review[i].revtext %></p>
+        <p>Suggestion:&nbsp;&nbsp;<%- review[i].suggestion %></p>
+        <p>Rating:&nbsp;&nbsp;<%- review[i].rating %></p>
+        <input value="delete review" type=button onclick="window.location.href='/review/delete?revid=<%- review[i].revid %>'">
+        <hr>
+        <% } %>
+
+        <% if(user){ %>
+        <input value="Add Review" type=button onclick="window.location.href='/review?rid=<%- recipe[0].rid %>&uname=<%=user%>'">
+        <% } %>
+        <hr>
+        <input value="modify recipe" type=button onclick="window.location.href='/recipe/<%= recipe[0].rid %>/edit'">
+        <input value="delete recipe" type=button onclick="window.location.href='/recipe/<%= recipe[0].rid %>/delete'">
+        <div>
+          <span class="tag"><%= recipe.posttime %></span>
+          <span class="tag right">
+
+
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('footer') %>
+

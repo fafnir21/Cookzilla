@@ -1,0 +1,9 @@
+<%- include('header') %>
+
+<% recipe.forEach(function (recipe) { %>
+  <%- include('components/recipe-content', { recipe: recipe }) %>
+<% }) %>
+
+<br/>
+<input value="Post Recipe" type=button onclick="window.location.href='/post'">
+<%- include('footer') %>

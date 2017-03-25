@@ -1,0 +1,19 @@
+<%- include('header') %>
+
+<% for(var i=0;i<group.length;i++){ %>
+<div class="post-content">
+  <div class="ui grid">
+    <div class="eight wide column">
+      <div class="ui segment">
+        <h3><a href="/group/<%= group[i].gid %>"><%= group[i].gname %></a></h3>
+        <pre><%- group[i].gdescription %></pre>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% } %>
+<br/>
+<input value="Create" type=button onclick="window.location.href='/group/create'">
+<%- include('footer') %>

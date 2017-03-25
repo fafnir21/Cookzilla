@@ -1,0 +1,19 @@
+<%- include('header') %>
+
+<% for(var i=0;i<meeting.length;i++){ %>
+<div class="post-content">
+  <div class="ui grid">
+    <div class="eight wide column">
+      <div class="ui segment">
+        <h3><a href="/meeting/<%= meeting[i].mid %>"><%= meeting[i].mtitle %></a></h3>
+        <pre><%- meeting[i].mdescription %></pre>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% } %>
+<br/>
+<input value="Create" type=button onclick="window.location.href='/meeting/create'">
+<%- include('footer') %>

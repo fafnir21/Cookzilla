@@ -1,0 +1,28 @@
+<%- include('header') %>
+
+<div class="post-content">
+  <div class="ui grid">
+
+
+    <div class="eight wide column">
+      <div class="ui segment">
+        <h3><a href="/group/<%= info[0].gid %>"><%= info[0].gname %></a></h3>
+        <pre>Description:</pre>
+        <pre><%- info[0].gdescription %></pre>
+        <hr>
+        <p>Member:</p>
+        <% for(var i=0;i<info.length;i++){ %>
+        <p><%- info[i].uname %>&nbsp;&nbsp;role:&nbsp;
+        <% if(info[i].role=='1'){ %>leader
+        <% } else { %>member
+        <% } %>
+        </p>
+        <% } %>
+        <hr>
+        <input value="Join" type=button onclick="window.location.href='/group/<%- info[0].gid %>/join?uname=<%=user%>'">
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('footer') %>
+

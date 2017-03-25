@@ -1,0 +1,24 @@
+<%- include('header') %>
+
+<div class="ui grid">
+
+  <div class="eight wide column">
+    <form class="ui form segment" method="post">
+      <div class="field required">
+        <label>Title</label>
+        <input type="text" value="<%- recipe[0].rtitle %>" name="title">
+      </div>
+      <div class="field required">
+        <label>Discription</label>
+        <textarea name="description" rows="15"><%- recipe[0].rdescription %></textarea>
+      </div>
+      <div class="field required">
+        <label>Servings</label>
+        <input type="text" value="<%- recipe[0].servings %>" name="servings">
+      </div>
+      <input type="submit" class="ui button" value="submit">
+    </div>
+  </form>
+</div>
+
+<%- include('footer') %>

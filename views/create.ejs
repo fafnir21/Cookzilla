@@ -1,0 +1,36 @@
+<%- include('header') %>
+
+<div class="ui grid">
+
+  <div class="eight wide column">
+    <form class="ui form segment" method="post" action="/post">
+      <div class="field required">
+        <label>Title</label>
+        <input type="text" name="title">
+      </div>
+      <div class="field required">
+        <label>Discription</label>
+        <textarea name="discription" rows="15"></textarea>
+      </div>
+      <div class="field required">
+        <label>Servings</label>
+        <input type="text" name="servings">
+      </div>
+      <div class="field required">
+        <label>Tag</label>
+        <input type="text" name="tag">
+      </div>
+      <div class="field required">
+        <label>Ingredient</label>
+        <input type="text" name="ingredient">
+      </div>
+      <div class="field required">
+        <label>Quantity</label>
+        <input type="text" name="quantity">
+      </div>
+      <input type="submit" class="ui button" value="submit">
+    </div>
+  </form>
+</div>
+
+<%- include('footer') %>
