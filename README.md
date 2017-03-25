@@ -5,5 +5,4 @@ Cookzilla is a website that focuses on cooking and recipes. The site allows peop
 This is a course project of Principals of Database System. Some function modules have not been implemented yet, including photo uploading and group/event management.
 ## Technologies
 Node.js (Express.js) + MySQL
-
 [mysqljs](https://github.com/mysqljs/mysql)
