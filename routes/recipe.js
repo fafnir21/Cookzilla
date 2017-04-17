@@ -5,7 +5,6 @@ var recipeModel = require('../models/recipe');
 var reviewModel = require('../models/review');
 var checkLogin = require('../middlewares/check').checkLogin;
 
-// GET /recipe 所有用户或者特定用户的文章页
 //   eg: GET /recipe?author=xxx
 router.get('/', checkLogin, function(req, res, next) {
   var author = req.query.author;
@@ -120,7 +119,7 @@ router.get('/:recipeId/delete', checkLogin, function(req, res, next) {
   });
 });
 
-// POST /recipe/:postId/comment 创建一条留言
+// POST /recipe/:postId/comment
 router.post('/:postId/comment', checkLogin, function(req, res, next) {
   var author = req.session.user._id;
   var postId = req.params.postId;
@@ -134,13 +133,12 @@ router.post('/:postId/comment', checkLogin, function(req, res, next) {
   CommentModel.create(comment)
     .then(function () {
       req.flash('success', '留言成功');
-      // 留言成功后跳转到上一页
       res.redirect('back');
     })
     .catch(next);
 });
 
-// GET /recipe/:postId/comment/:commentId/remove 删除一条留言
+// GET /recipe/:postId/comment/:commentId/remove 
 router.get('/:postId/comment/:commentId/remove', checkLogin, function(req, res, next) {
   var commentId = req.params.commentId;
   var author = req.session.user._id;
@@ -148,7 +146,6 @@ router.get('/:postId/comment/:commentId/remove', checkLogin, function(req, res, 
   CommentModel.delCommentById(commentId, author)
     .then(function () {
       req.flash('success', '删除留言成功');
-      // 删除成功后跳转到上一页
       res.redirect('back');
     })
     .catch(next);
